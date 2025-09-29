@@ -2,11 +2,7 @@ import BottomNav from "./BottomNav";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../contexts/UserContext";
 
-interface MessagesProps {
-  onNavigate: (view: "explore" | "dashboard" | "messages" | "profile") => void;
-}
-
-export default function Messages({ onNavigate }: MessagesProps) {
+export default function Messages() {
   const navigate = useNavigate();
   const { accountType } = useUserContext();
 

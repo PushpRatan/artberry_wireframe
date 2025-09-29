@@ -157,10 +157,7 @@ function App() {
             path="/dashboard"
             element={<Dashboard onNavigate={() => {}} />}
           />
-          <Route
-            path="/messages"
-            element={<Messages onNavigate={() => {}} />}
-          />
+          <Route path="/messages" element={<Messages />} />
           <Route path="/messages/:slug" element={<Chat />} />
           <Route path="/profile" element={<Profile onNavigate={() => {}} />} />
           <Route
