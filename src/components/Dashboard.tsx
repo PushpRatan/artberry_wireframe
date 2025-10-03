@@ -205,7 +205,7 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
         {/* Stats Cards */}
         <div className="grid grid-cols-2 gap-4">
           <div className="border border-gray-200 rounded-2xl p-4 bg-white">
-            <div className="text-2xl font-bold text-blue-600">
+            <div className="text-2xl font-bold text-[#EF473B]">
               {accountType === "artist"
                 ? projects.length
                 : patronUpcoming.length}
@@ -218,12 +218,12 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
           </div>
           {accountType === "artist" ? (
             <div className="border border-gray-200 rounded-2xl p-4 bg-white">
-              <div className="text-2xl font-bold text-green-600">₹20,450</div>
+              <div className="text-2xl font-bold text-[#2ecc71]">₹20,450</div>
               <div className="text-sm text-gray-600">Earnings</div>
             </div>
           ) : (
             <div className="border border-gray-200 rounded-2xl p-4 bg-white">
-              <div className="text-2xl font-bold text-purple-600">
+              <div className="text-2xl font-bold text-[#6a1b9a]">
                 {unassigned.length}
               </div>
               <div className="text-sm text-gray-600">Unassigned Bookings</div>
@@ -314,7 +314,7 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
                           </div>
                         </div>
                         <div className="text-right ml-4">
-                          <div className="text-lg font-bold text-blue-600">
+                          <div className="text-lg font-bold text-[#EF473B]">
                             {project.price}
                           </div>
                           <div className="text-xs text-gray-500 mb-2">
@@ -323,10 +323,10 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
                           <span
                             className={`px-3 py-1 rounded-full text-xs font-medium ${
                               project.status === "Completed"
-                                ? "bg-green-100 text-green-800"
+                                ? "bg-[#2ecc7133] text-[#2ecc71]"
                                 : project.status === "In Progress"
-                                ? "bg-blue-100 text-blue-800"
-                                : "bg-yellow-100 text-yellow-800"
+                                ? "bg-[#EF473B33] text-[#EF473B]"
+                                : "bg-[#ff990033] text-[#ff9900]"
                             }`}
                           >
                             {project.status}
@@ -445,7 +445,7 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
                             {project.deliverables.map(
                               (deliverable: string, idx: number) => (
                                 <li key={idx} className="flex items-center">
-                                  <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></span>
+                                  <span className="w-1.5 h-1.5 bg-[#EF473B] rounded-full mr-2"></span>
                                   {deliverable}
                                 </li>
                               )
@@ -514,7 +514,7 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
                     <div className="text-xs text-gray-500 mt-1">
                       Delivery: {req.date || "TBD"}
                     </div>
-                    <div className="text-sm font-semibold text-blue-600 mt-2">
+                    <div className="text-sm font-semibold text-[#EF473B] mt-2">
                       ₹{req.budget || "0"}
                     </div>
                   </button>
@@ -554,7 +554,7 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
                         />
                       </div>
                       <div className="text-right ml-4">
-                        <div className="text-lg font-bold text-blue-600">
+                        <div className="text-lg font-bold text-[#EF473B]">
                           {project.price}
                         </div>
                         <div className="text-xs text-gray-500">
@@ -708,7 +708,7 @@ export default function Dashboard({ onNavigate: _ }: DashboardProps) {
                   setNewLogo("");
                   setCreateOpen(false);
                 }}
-                className="w-full px-4 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-medium"
+                className="w-full px-4 py-2.5 rounded-xl bg-[#EF473B] text-white text-sm font-medium hover:bg-[#d63d32]"
               >
                 Create
               </button>

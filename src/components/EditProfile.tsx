@@ -14,12 +14,16 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
     email: "john@example.com",
     phone: "+1 (555) 123-4567",
     location: "San Francisco, CA",
-    title: accountType === "artist" ? "Graphic Designer" : "Creative Director",
+    title: accountType === "artist" ? "Painter" : "Realtor",
     experience: "5+ years",
     bio:
       accountType === "artist"
         ? "I create stunning visual designs that help brands stand out. With over 5 years of experience, I specialize in logo design, branding, and digital art."
         : "I'm passionate about discovering and working with talented artists to bring creative visions to life.",
+    instagram: "https://www.instagram.com/johndoe/",
+    twitter: "",
+    linkedin: "",
+    behance: "",
   });
 
   const handleSave = () => {
@@ -41,7 +45,7 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
         <h1 className="text-lg font-semibold text-gray-900">Edit Profile</h1>
         <button
           onClick={handleSave}
-          className="text-sm text-blue-600 font-medium"
+          className="text-sm text-[#EF473B] font-medium"
         >
           Save
         </button>
@@ -65,7 +69,7 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
               />
             </div>
             <div>
@@ -78,7 +82,7 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
               />
             </div>
             <div>
@@ -91,7 +95,7 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
               />
             </div>
             <div>
@@ -104,7 +108,7 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, location: e.target.value })
                 }
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
               />
             </div>
           </div>
@@ -124,7 +128,7 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, title: e.target.value })
                 }
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
               />
             </div>
             <div>
@@ -137,7 +141,7 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
                 onChange={(e) =>
                   setFormData({ ...formData, experience: e.target.value })
                 }
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
               />
             </div>
             <div>
@@ -152,6 +156,69 @@ export default function EditProfile({ accountType, onSave }: EditProfileProps) {
                 rows={4}
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"
                 placeholder="Tell us about yourself..."
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Social Media */}
+        <div className="border border-gray-200 rounded-2xl p-4 bg-white">
+          <h3 className="font-semibold text-gray-900 mb-3">Social Media</h3>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Instagram URL or handle
+              </label>
+              <input
+                type="text"
+                value={formData.instagram}
+                onChange={(e) =>
+                  setFormData({ ...formData, instagram: e.target.value })
+                }
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
+                placeholder="https://instagram.com/yourname or @yourname"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                X (Twitter) URL or handle
+              </label>
+              <input
+                type="text"
+                value={formData.twitter}
+                onChange={(e) =>
+                  setFormData({ ...formData, twitter: e.target.value })
+                }
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
+                placeholder="https://x.com/yourname or @yourname"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                LinkedIn URL
+              </label>
+              <input
+                type="text"
+                value={formData.linkedin}
+                onChange={(e) =>
+                  setFormData({ ...formData, linkedin: e.target.value })
+                }
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
+                placeholder="https://www.linkedin.com/in/yourname"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Behance URL
+              </label>
+              <input
+                type="text"
+                value={formData.behance}
+                onChange={(e) =>
+                  setFormData({ ...formData, behance: e.target.value })
+                }
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
+                placeholder="https://www.behance.net/yourname"
               />
             </div>
           </div>

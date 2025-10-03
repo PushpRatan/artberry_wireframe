@@ -127,7 +127,7 @@ export default function Chat() {
             setOrderOpen(true);
             setOrderStep("form");
           }}
-          className="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-sm font-medium"
+          className="px-3 py-1.5 rounded-lg bg-[#EF473B] text-white text-sm font-medium hover:bg-[#d63d32]"
         >
           Request Order
         </button>
@@ -153,7 +153,7 @@ export default function Chat() {
             <div
               className={`${
                 m.from === "me"
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#EF473B] text-white"
                   : "bg-white text-gray-900"
               } max-w-[75%] px-3 py-2 rounded-xl shadow border border-gray-200`}
             >
@@ -180,7 +180,7 @@ export default function Chat() {
           />
           <button
             onClick={() => sendMessage()}
-            className="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-medium"
+            className="px-4 py-2 rounded-xl bg-[#EF473B] text-white text-sm font-medium hover:bg-[#d63d32]"
           >
             Send
           </button>
@@ -268,7 +268,7 @@ export default function Chat() {
                 <div className="pt-1">
                   <button
                     onClick={() => setOrderStep("pay")}
-                    className="w-full px-4 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-medium"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#EF473B] text-white text-sm font-medium hover:bg-[#d63d32]"
                   >
                     Request
                   </button>
@@ -312,7 +312,7 @@ export default function Chat() {
                     } — $${price || "0"} on ${bookingDate || "TBD"}.`;
                     sendMessage(summary);
                   }}
-                  className="w-full px-4 py-2.5 rounded-xl bg-green-600 text-white text-sm font-medium"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#2ecc71] text-white text-sm font-medium hover:bg-[#27ae60]"
                 >
                   Paid
                 </button>

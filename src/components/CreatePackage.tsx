@@ -669,22 +669,22 @@ export default function ArtistOnboarding({
         {/* Back Button */}
         <button
           onClick={handleBack}
-          className="flex items-center text-gray-600 hover:text-gray-900 text-sm mb-2"
+          className="flex items-center text-[#2B2B2B] hover:text-[#6A1B9A] text-sm mb-2"
         >
           ← Back
         </button>
 
         <div className="text-center mb-2">
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-xl font-bold text-[#2B2B2B]">
             {initialPackage?.name ? "Edit Package" : "Create Package"}
           </h2>
-          <p className="text-gray-600">Update your service package details</p>
+          <p className="text-[#2B2B2B]">Update your service package details</p>
         </div>
 
         {/* Package Form */}
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#2B2B2B] mb-1">
               Package Name
             </label>
             <input
@@ -694,12 +694,12 @@ export default function ArtistOnboarding({
               onChange={(e) =>
                 setCurrentPackage((prev) => ({ ...prev, name: e.target.value }))
               }
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#2B2B2B] mb-1">
               Price ($)
             </label>
             <input
@@ -712,12 +712,12 @@ export default function ArtistOnboarding({
                   price: e.target.value,
                 }))
               }
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#2B2B2B] mb-1">
               Description (Optional)
             </label>
             <textarea
@@ -729,13 +729,13 @@ export default function ArtistOnboarding({
                   description: e.target.value,
                 }))
               }
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B] resize-none"
               rows={3}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#2B2B2B] mb-2">
               What's included
             </label>
             <div className="space-y-2">
@@ -748,12 +748,12 @@ export default function ArtistOnboarding({
                     onChange={(e) =>
                       handleDeliverableChange(index, e.target.value)
                     }
-                    className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                    className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#EF473B]"
                   />
                   {currentPackage.deliverables.length > 1 && (
                     <button
                       onClick={() => handleRemoveDeliverable(index)}
-                      className="text-red-500 hover:text-red-700 p-2"
+                      className="text-[#EF473B] hover:text-[#d63d32] p-2"
                     >
                       ×
                     </button>
@@ -762,7 +762,7 @@ export default function ArtistOnboarding({
               ))}
               <button
                 onClick={handleAddDeliverable}
-                className="text-blue-600 text-sm font-medium flex items-center gap-1"
+                className="text-[#6A1B9A] text-sm font-medium flex items-center gap-1"
               >
                 + Add another deliverable
               </button>
@@ -775,7 +775,7 @@ export default function ArtistOnboarding({
           <button
             onClick={handleSavePackage}
             disabled={!currentPackage.name || !currentPackage.price}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
+            className="w-full bg-[#EF473B] text-white py-3 rounded-lg font-medium hover:bg-[#d63d32] disabled:bg-gray-300 disabled:cursor-not-allowed transition"
           >
             {initialPackage?.name ? "Update Package" : "Save Package"}
           </button>
@@ -790,14 +790,14 @@ export default function ArtistOnboarding({
         {/* Back Button */}
         <button
           onClick={handleBack}
-          className="flex items-center text-gray-600 hover:text-gray-900 text-sm mb-2"
+          className="flex items-center text-[#2B2B2B] hover:text-[#6A1B9A] text-sm mb-2"
         >
           ← Back
         </button>
 
         <div className="text-center mb-2">
-          <h2 className="text-xl font-bold text-gray-900">Edit Package</h2>
-          <p className="text-gray-600">
+          <h2 className="text-xl font-bold text-[#2B2B2B]">Edit Package</h2>
+          <p className="text-[#2B2B2B]">
             Review and adjust your package details
           </p>
         </div>
@@ -815,7 +815,7 @@ export default function ArtistOnboarding({
               onChange={(e) =>
                 setCurrentPackage((prev) => ({ ...prev, name: e.target.value }))
               }
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
             />
           </div>
 
@@ -833,7 +833,7 @@ export default function ArtistOnboarding({
                   price: e.target.value,
                 }))
               }
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
             />
           </div>
 
@@ -850,7 +850,7 @@ export default function ArtistOnboarding({
                   description: e.target.value,
                 }))
               }
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B] resize-none"
               rows={3}
             />
           </div>
@@ -869,7 +869,7 @@ export default function ArtistOnboarding({
                     onChange={(e) =>
                       handleDeliverableChange(index, e.target.value)
                     }
-                    className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                    className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-[#EF473B]"
                   />
                   {currentPackage.deliverables.length > 1 && (
                     <button
@@ -883,7 +883,7 @@ export default function ArtistOnboarding({
               ))}
               <button
                 onClick={handleAddDeliverable}
-                className="text-blue-600 text-sm font-medium flex items-center gap-1"
+                className="text-[#EF473B] text-sm font-medium flex items-center gap-1"
               >
                 + Add another deliverable
               </button>
@@ -898,7 +898,7 @@ export default function ArtistOnboarding({
             <button
               onClick={handleSavePackage}
               disabled={!currentPackage.name || !currentPackage.price}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
+              className="w-full bg-[#EF473B] text-white py-3 rounded-lg font-medium hover:bg-[#d63d32] disabled:bg-gray-300 disabled:cursor-not-allowed transition"
             >
               Save Package
             </button>
@@ -915,7 +915,7 @@ export default function ArtistOnboarding({
                   }
                 }}
                 disabled={!currentPackage.name || !currentPackage.price}
-                className="w-full bg-green-600 text-white py-3 rounded-lg font-medium hover:bg-green-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
+                className="w-full bg-[#2ECC71] text-white py-3 rounded-lg font-medium hover:bg-[#26b863] disabled:bg-gray-300 disabled:cursor-not-allowed transition"
               >
                 Continue with {packages.length + 1} package
                 {packages.length > 0 ? "s" : ""}
@@ -956,21 +956,21 @@ export default function ArtistOnboarding({
         {/* Back Button */}
         <button
           onClick={handleBack}
-          className="flex items-center text-gray-600 hover:text-gray-900 text-sm mb-2"
+          className="flex items-center text-[#2B2B2B] hover:text-[#6A1B9A] text-sm mb-2"
         >
           ← Back
         </button>
 
         <div className="text-center mb-2">
-          <h2 className="text-xl font-bold text-gray-900">Choose Your Role</h2>
-          <p className="text-gray-600">
+          <h2 className="text-xl font-bold text-[#2B2B2B]">Choose Your Role</h2>
+          <p className="text-[#2B2B2B]">
             Select your specific role within {selectedCategory}
           </p>
         </div>
 
         {/* Roles */}
         <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700">
+          <label className="block text-sm font-medium text-[#2B2B2B]">
             Role
           </label>
           {roles.length > 0 ? (
@@ -981,16 +981,17 @@ export default function ArtistOnboarding({
                   onClick={() => setSelectedRole(role)}
                   className={`border rounded-lg px-4 py-3 text-left transition ${
                     selectedRole === role
-                      ? "border-blue-500 bg-blue-50"
+                      ? "border-[#6A1B9A] bg-[#6A1B9A1a]"
                       : "border-gray-200 hover:border-gray-300"
                   }`}
+                  style={{ color: "#2B2B2B" }}
                 >
-                  <div className="font-medium text-gray-900">{role}</div>
+                  <div className="font-medium">{role}</div>
                 </button>
               ))}
             </div>
           ) : (
-            <div className="text-center py-8 text-gray-500">
+            <div className="text-center py-8" style={{ color: "#2B2B2B" }}>
               <p>No roles found for discipline: {discipline}</p>
               <p className="text-sm">Category: {selectedCategory || "None"}</p>
             </div>
@@ -1000,7 +1001,7 @@ export default function ArtistOnboarding({
         {/* Variants */}
         {selectedRole && (
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-[#2B2B2B]">
               Choose Package Tier
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1010,23 +1011,31 @@ export default function ArtistOnboarding({
                 return (
                   <div
                     key={tier}
-                    className="border border-gray-200 rounded-lg p-4 bg-white"
+                    className="border border-gray-200 rounded-lg p-4 bg-[#FFF6F6]"
                   >
                     <div className="flex items-start justify-between">
                       <div>
-                        <div className="text-sm text-gray-500">{tier}</div>
-                        <div className="font-medium text-gray-900">
+                        <div className="text-sm text-[#2B2B2B]">{tier}</div>
+                        <div className="font-medium text-[#2B2B2B]">
                           {variant.name}
                         </div>
-                        <div className="text-blue-600 font-semibold">
+                        <div
+                          className={`font-semibold ${
+                            tier === "Basic"
+                              ? "text-[#6A1B9A]"
+                              : tier === "Standard"
+                              ? "text-[#EF473B]"
+                              : "text-[#2ECC71]"
+                          }`}
+                        >
                           {variant.price}
                         </div>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-600 mt-2">
+                    <p className="text-sm text-[#2B2B2B] mt-2">
                       {variant.description}
                     </p>
-                    <div className="text-xs text-gray-500 mt-1">
+                    <div className="text-xs text-[#2B2B2B] mt-1">
                       Includes: {variant.deliverables.join(", ")}
                     </div>
                     <button
@@ -1039,7 +1048,7 @@ export default function ArtistOnboarding({
                         });
                         setCurrentStep("creating-package");
                       }}
-                      className="mt-3 w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition"
+                      className="mt-3 w-full bg-[#6A1B9A] text-white py-2 rounded-lg font-medium hover:bg-[#59167f] transition"
                     >
                       Use template
                     </button>

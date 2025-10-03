@@ -31,7 +31,7 @@ export default function PaymentStepper({
             <div
               key={step.id}
               className={`w-2 h-2 rounded-full ${
-                step.id <= currentStep ? "bg-blue-600" : "bg-gray-300"
+                step.id <= currentStep ? "bg-[#EF473B]" : "bg-gray-300"
               }`}
             />
           ))}
@@ -55,7 +55,7 @@ export default function PaymentStepper({
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                       step.id <= currentStep
-                        ? "bg-blue-600 text-white"
+                        ? "bg-[#EF473B] text-white"
                         : "bg-gray-200 text-gray-600"
                     }`}
                   >
@@ -64,7 +64,7 @@ export default function PaymentStepper({
                   {index < steps.length - 1 && (
                     <div
                       className={`w-12 h-0.5 mx-2 ${
-                        step.id < currentStep ? "bg-blue-600" : "bg-gray-300"
+                        step.id < currentStep ? "bg-[#EF473B]" : "bg-gray-300"
                       }`}
                     />
                   )}
@@ -81,7 +81,7 @@ export default function PaymentStepper({
           <div key={step.id} className="text-center flex-1">
             <div
               className={`text-xs font-medium ${
-                step.id <= currentStep ? "text-blue-600" : "text-gray-500"
+                step.id <= currentStep ? "text-[#EF473B]" : "text-gray-500"
               }`}
             >
               {step.name}
@@ -96,7 +96,7 @@ export default function PaymentStepper({
         <div className="pt-1">
           <button
             onClick={onAdvance}
-            className="w-full px-3 py-2 rounded-lg text-sm font-medium bg-blue-600 text-white hover:bg-blue-700 transition"
+            className="w-full px-3 py-2 rounded-lg text-sm font-medium bg-[#EF473B] text-white hover:bg-[#d63d32] transition"
             title="Advance to next step"
           >
             Advance

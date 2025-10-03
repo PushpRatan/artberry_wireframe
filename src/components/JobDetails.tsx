@@ -19,9 +19,9 @@ export default function JobDetails() {
   const { slug } = useParams();
   const location = useLocation();
   const { accountType } = useUserContext();
-  const [isBidOpen, setIsBidOpen] = useState(false);
-  const [bidAmount, setBidAmount] = useState<string>("");
-  const [bidNotes, setBidNotes] = useState<string>("");
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+  const [bidAmount, setApplyAmount] = useState<string>("");
+  const [bidNotes, setApplyNotes] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const job = (location.state as Job) || {
     title: (slug || "").replace(/-/g, " "),
@@ -61,22 +61,22 @@ export default function JobDetails() {
 
   const isPatronView =
     accountType === "patron" || (location.state as any)?.fromUnassigned;
-  const handleOpenBid = () => setIsBidOpen(true);
-  const handleCloseBid = () => {
-    setIsBidOpen(false);
+  const handleOpenApply = () => setIsApplyOpen(true);
+  const handleCloseApply = () => {
+    setIsApplyOpen(false);
     setIsSubmitting(false);
   };
 
-  const handleSubmitBid = async () => {
+  const handleSubmitApply = async () => {
     if (!bidAmount) return;
     setIsSubmitting(true);
     // Simulate submit
     setTimeout(() => {
       setIsSubmitting(false);
-      setIsBidOpen(false);
+      setIsApplyOpen(false);
       // Reset fields (optional)
-      setBidAmount("");
-      setBidNotes("");
+      setApplyAmount("");
+      setApplyNotes("");
     }, 600);
   };
 
@@ -138,8 +138,8 @@ export default function JobDetails() {
           {!isPatronView && (
             <div className="pt-2">
               <button
-                onClick={handleOpenBid}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+                onClick={handleOpenApply}
+                className="w-full bg-[#EF473B] text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
               >
                 Apply
               </button>
@@ -188,8 +188,8 @@ export default function JobDetails() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm text-gray-700">Bid</div>
-                      <div className="text-base font-semibold text-blue-600">
+                      <div className="text-sm text-gray-700">Charge</div>
+                      <div className="text-base font-semibold text-[#EF473B]">
                         ${a.bid}
                       </div>
                       {isPatronView && (
@@ -213,7 +213,7 @@ export default function JobDetails() {
                               },
                             })
                           }
-                          className="mt-2 px-3 py-1 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700"
+                          className="mt-2 px-3 py-1 rounded-lg bg-[#EF473B] text-white text-sm font-medium hover:bg-blue-700"
                         >
                           Assign
                         </button>
@@ -231,7 +231,7 @@ export default function JobDetails() {
         <BottomNav active="explore" onChange={handleTabChange} />
       </div>
 
-      {isBidOpen && (
+      {isApplyOpen && (
         <div className="fixed inset-0 bg-black/40 flex items-end sm:items-center justify-center p-0 sm:p-4 z-50">
           <div className="w-full sm:max-w-md bg-white rounded-t-2xl sm:rounded-2xl shadow-lg">
             <div className="p-4 border-b border-gray-200 flex items-center justify-between">
@@ -239,7 +239,7 @@ export default function JobDetails() {
                 State your charge
               </div>
               <button
-                onClick={handleCloseBid}
+                onClick={handleCloseApply}
                 className="text-gray-500 hover:text-gray-700"
               >
                 ✕
@@ -255,7 +255,7 @@ export default function JobDetails() {
                   min="1"
                   inputMode="numeric"
                   value={bidAmount}
-                  onChange={(e) => setBidAmount(e.target.value)}
+                  onChange={(e) => setApplyAmount(e.target.value)}
                   placeholder="e.g., 1200"
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
                 />
@@ -266,7 +266,7 @@ export default function JobDetails() {
                 </label>
                 <textarea
                   value={bidNotes}
-                  onChange={(e) => setBidNotes(e.target.value)}
+                  onChange={(e) => setApplyNotes(e.target.value)}
                   placeholder="Briefly describe your approach, timeline, or inclusions"
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 resize-none"
                   rows={4}
@@ -276,13 +276,13 @@ export default function JobDetails() {
             <div className="p-4 border-t border-gray-200 space-y-3">
               <button
                 disabled={!bidAmount || isSubmitting}
-                onClick={handleSubmitBid}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
+                onClick={handleSubmitApply}
+                className="w-full bg-[#EF473B] text-white py-3 rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition"
               >
                 {isSubmitting ? "Applyinging..." : "Apply"}
               </button>
               <button
-                onClick={handleCloseBid}
+                onClick={handleCloseApply}
                 className="w-full border border-gray-300 text-gray-700 py-3 rounded-lg font-medium hover:bg-gray-50 transition"
               >
                 Cancel

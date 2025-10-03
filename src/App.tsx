@@ -18,6 +18,8 @@ import Chat from "./components/Chat";
 import Profile from "./components/Profile";
 import EditProfile from "./components/EditProfile";
 import PaymentConfirmation from "./components/PaymentConfirmation";
+import { useUserContext } from "./contexts/UserContext";
+import SubscriptionPage from "./components/SubscriptionPage";
 
 function App() {
   const navigate = useNavigate();
@@ -118,40 +120,48 @@ function App() {
           <Route path="/artists" element={<ArtistList />} />
           <Route path="/jobs" element={<JobList />} />
           <Route path="/job/:slug" element={<JobDetails />} />
+          <Route path="/subscription" element={<SubscriptionPage />} />
           <Route
             path="/payment"
-            element={
-              <PaymentConfirmation
-                artist={{ name: "", avatar: "", slug: "" }}
-                package={{
-                  name: "",
-                  price: 0,
-                  description: "",
-                  deliverables: [],
-                }}
-                onBack={() => navigate(-1)}
-                onPaymentComplete={(artist, pkg) =>
-                  navigate(
-                    `/messages/${
-                      artist.slug ||
-                      artist.name.toLowerCase().replace(/\s+/g, "-")
-                    }` as string,
-                    {
-                      state: {
-                        artist: {
-                          name: artist.name,
-                          avatar: artist.avatar,
-                          slug:
-                            artist.slug ||
-                            artist.name.toLowerCase().replace(/\s+/g, "-"),
-                        },
-                        initialMessage: `Assigned: ${pkg.name} ($${pkg.price}). ${pkg.description}`,
-                      },
+            element={(() => {
+              const { setSubscription } = useUserContext();
+              const state = (location.state as any) || {};
+              return (
+                <PaymentConfirmation
+                  artist={{ name: "", avatar: "", slug: "" }}
+                  package={{
+                    name: "",
+                    price: 0,
+                    description: "",
+                    deliverables: [],
+                  }}
+                  onBack={() => navigate(-1)}
+                  onPaymentComplete={(artist, pkg) => {
+                    if (state.source === "subscription") {
+                      setSubscription({ active: true, plan: pkg });
+                      navigate("/profile");
+                    } else {
+                      navigate(
+                        `/messages/${
+                          artist.slug || artist.name.toLowerCase().replace(/\s+/g, "-")
+                        }` as string,
+                        {
+                          state: {
+                            artist: {
+                              name: artist.name,
+                              avatar: artist.avatar,
+                              slug:
+                                artist.slug || artist.name.toLowerCase().replace(/\s+/g, "-"),
+                            },
+                            initialMessage: `Assigned: ${pkg.name} ($${pkg.price}). ${pkg.description}`,
+                          },
+                        }
+                      );
                     }
-                  )
-                }
-              />
-            }
+                  }}
+                />
+              );
+            })()}
           />
           <Route
             path="/dashboard"

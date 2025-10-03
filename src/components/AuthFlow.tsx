@@ -70,7 +70,7 @@ export default function AuthFlow({
       <div className="space-y-4">
         <button
           onClick={() => setCurrentView("signup")}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+          className="w-full bg-[#EF473B] text-white py-3 rounded-lg font-medium hover:bg-[#d63d32] transition"
         >
           Get Started
         </button>
@@ -112,23 +112,23 @@ export default function AuthFlow({
           <input
             type="text"
             placeholder="Full name"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
           />
         )}
         <input
           type="email"
           placeholder="Email address"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
         />
         <input
           type="password"
           placeholder="Password"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500"
+          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-[#EF473B]"
         />
 
         <button
           onClick={isLogin ? () => setCurrentView("explore") : handleSignUp}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+          className="w-full bg-[#EF473B] text-white py-3 rounded-lg font-medium hover:bg-[#d63d32] transition"
         >
           {isLogin ? "Sign in" : "Create account"}
         </button>
@@ -138,7 +138,7 @@ export default function AuthFlow({
         {isLogin ? "Don't have an account? " : "Already have an account? "}
         <button
           onClick={() => setCurrentView(isLogin ? "signup" : "login")}
-          className="text-blue-600 font-medium"
+          className="text-[#EF473B] font-medium"
         >
           {isLogin ? "Sign up" : "Sign in"}
         </button>
@@ -149,7 +149,7 @@ export default function AuthFlow({
   const Onboarding = () => (
     <div className="text-center">
       <div className="mb-6">
-        <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+        <div className="w-12 h-12 bg-[#2ecc7133] rounded-full flex items-center justify-center mx-auto mb-3">
           <span className="text-2xl">🎉</span>
         </div>
         <h2 className="text-xl font-bold text-gray-900 mb-2">
@@ -161,10 +161,10 @@ export default function AuthFlow({
       <div className="space-y-3">
         <button
           onClick={() => handleUserTypeSelect("artist")}
-          className="w-full text-left border-2 border-gray-200 hover:border-blue-300 bg-white p-4 rounded-lg transition-all hover:shadow-sm"
+          className="w-full text-left border-2 border-gray-200 hover:border-[#EF473B] bg-white p-4 rounded-lg transition-all hover:shadow-sm"
         >
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+            <div className="w-10 h-10 bg-[#6a1b9a33] rounded-lg flex items-center justify-center mr-3">
               <span className="text-lg">🎨</span>
             </div>
             <div>
@@ -178,10 +178,10 @@ export default function AuthFlow({
 
         <button
           onClick={() => handleUserTypeSelect("patron")}
-          className="w-full text-left border-2 border-gray-200 hover:border-blue-300 bg-white p-4 rounded-lg transition-all hover:shadow-sm"
+          className="w-full text-left border-2 border-gray-200 hover:border-[#EF473B] bg-white p-4 rounded-lg transition-all hover:shadow-sm"
         >
           <div className="flex items-center">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+            <div className="w-10 h-10 bg-[#EF473B33] rounded-lg flex items-center justify-center mr-3">
               <span className="text-lg">💼</span>
             </div>
             <div>
@@ -231,7 +231,7 @@ export default function AuthFlow({
                 setArtistDiscipline(d.label);
                 setCurrentView("artist-setup");
               }}
-              className="w-full text-left border-2 border-gray-200 hover:border-blue-300 bg-white p-4 rounded-lg transition-all hover:shadow-sm"
+              className="w-full text-left border-2 border-gray-200 hover:border-[#EF473B] bg-white p-4 rounded-lg transition-all hover:shadow-sm"
             >
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center mr-3">
@@ -294,7 +294,7 @@ export default function AuthFlow({
   const Dashboard = () => (
     <div className="text-center">
       <div className="mb-6">
-        <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-gradient-to-r from-[#EF473B33] to-[#6a1b9a33] rounded-full flex items-center justify-center mx-auto mb-4">
           <span className="text-3xl">
             {userType === "artist" ? "🎨" : "💼"}
           </span>
@@ -320,7 +320,7 @@ export default function AuthFlow({
 
       <button
         onClick={() => setCurrentView("welcome")}
-        className="text-blue-600 font-medium"
+        className="text-[#EF473B] font-medium"
       >
         Sign out
       </button>

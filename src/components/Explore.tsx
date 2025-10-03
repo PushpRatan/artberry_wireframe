@@ -71,7 +71,7 @@ export default function Explore({ onNavigate: _ }: ExploreProps) {
               className="text-left border border-gray-200 rounded-2xl p-4 bg-white"
             >
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
+                <div className="w-11 h-11 rounded-xl bg-[#EF473B1a] text-[#EF473B] flex items-center justify-center text-lg">
                   {c.icon}
                 </div>
                 <div>
@@ -102,7 +102,7 @@ export default function Explore({ onNavigate: _ }: ExploreProps) {
                 ? navigate("/jobs")
                 : navigate("/artists")
             }
-            className="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-medium"
+            className="px-4 py-2 rounded-xl bg-[#EF473B] text-white text-sm font-medium hover:bg-[#d63d32]"
           >
             View all
           </button>
@@ -188,7 +188,7 @@ export default function Explore({ onNavigate: _ }: ExploreProps) {
                             }
                           );
                         }}
-                        className="ml-auto px-3 py-1 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700"
+                        className="ml-auto px-3 py-1 rounded-lg bg-[#EF473B] text-white text-sm font-medium hover:bg-[#d63d32]"
                       >
                         Apply
                       </button>
@@ -251,7 +251,7 @@ export default function Explore({ onNavigate: _ }: ExploreProps) {
                     <div className="text-sm text-gray-600 mb-2">{a.title}</div>
                     <div className="flex items-center gap-3">
                       <div className="flex items-center gap-1 text-sm text-gray-700">
-                        <span className="text-yellow-500">⭐</span>
+                        <span className="text-[#ffc107]">⭐</span>
                         <span>{a.rating}</span>
                         <span className="text-gray-400">({a.reviews})</span>
                       </div>
@@ -355,7 +355,7 @@ export default function Explore({ onNavigate: _ }: ExploreProps) {
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-600">Notifications</span>
-              <div className="w-10 h-6 bg-blue-600 rounded-full"></div>
+              <div className="w-10 h-6 bg-[#EF473B] rounded-full"></div>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-sm text-gray-600">Dark Mode</span>

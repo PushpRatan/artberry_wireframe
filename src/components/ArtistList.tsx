@@ -53,13 +53,13 @@ export default function ArtistList() {
       <div className="flex-1 overflow-y-auto p-6 space-y-4">
         <button
           onClick={() => navigate("/explore")}
-          className="flex items-center text-gray-600 hover:text-gray-900 text-sm"
+          className="flex items-center text-[#2B2B2B] hover:text-[#6A1B9A] text-sm"
         >
           ← Back
         </button>
 
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-gray-900">
+          <h3 className="text-lg font-semibold text-[#2B2B2B]">
             {category ? `${category} Artists` : "All Artists"}
           </h3>
         </div>
@@ -76,7 +76,7 @@ export default function ArtistList() {
                   }
                 )
               }
-              className="text-left border border-gray-200 rounded-2xl p-4 bg-white w-full!"
+              className="text-left border border-gray-200 rounded-2xl p-4 bg-[#FFF6F6] w-full!"
             >
               <div className="flex items-start gap-3">
                 <img
@@ -86,19 +86,27 @@ export default function ArtistList() {
                 />
                 <div className="flex-1">
                   <div className="flex items-start justify-between">
-                    <div className="text-gray-900 font-semibold text-base">
+                    <div className="text-[#2B2B2B] font-semibold text-base">
                       {a.name}
                     </div>
-                    <button className="text-gray-400">♡</button>
+                    <button className="text-[#6A1B9A]">♡</button>
                   </div>
-                  <div className="text-sm text-gray-600 mb-2">{a.title}</div>
+                  <div className="text-sm text-[#2B2B2B] mb-2">{a.title}</div>
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1 text-sm text-gray-700">
-                      <span className="text-yellow-500">⭐</span>
+                    <div className="flex items-center gap-1 text-sm text-[#2B2B2B]">
+                      <span className="text-[#ffc107]">⭐</span>
                       <span>{a.rating}</span>
-                      <span className="text-gray-400">({a.reviews})</span>
+                      <span className="text-[#2B2B2B] opacity-70">
+                        ({a.reviews})
+                      </span>
                     </div>
-                    <div className="px-3 py-1 rounded-lg bg-gray-100 text-gray-800 text-sm font-medium">
+                    <div
+                      className={`px-3 py-1 rounded-lg text-sm font-medium border ${
+                        idx % 2 === 0
+                          ? "bg-[#6A1B9A1a] text-[#6A1B9A] border-[#6A1B9A1a]"
+                          : "bg-[#2ECC711a] text-[#2ECC71] border-[#2ECC711a]"
+                      }`}
+                    >
                       From ${a.price}
                     </div>
                   </div>

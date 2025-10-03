@@ -93,7 +93,7 @@ export default function Messages() {
                   },
                 });
               }}
-              className="w-full text-left border border-gray-200 rounded-2xl p-4 bg-white hover:bg-gray-50 transition shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full text-left border border-gray-200 rounded-2xl p-4 bg-white hover:bg-gray-50 transition shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-[#EF473B]"
             >
               <div className="flex items-center gap-3">
                 {/* Avatar + Online indicator */}
@@ -104,7 +104,7 @@ export default function Messages() {
                     className="w-12 h-12 rounded-full object-cover border border-gray-200"
                   />
                   {conversation.online && (
-                    <span className="absolute bottom-0 right-0 block w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white"></span>
+                    <span className="absolute bottom-0 right-0 block w-3.5 h-3.5 bg-[#2ecc71] rounded-full border-2 border-white"></span>
                   )}
                 </div>
 
@@ -124,7 +124,7 @@ export default function Messages() {
                       {conversation.lastMessage}
                     </p>
                     {conversation.unread && (
-                      <span className="flex-shrink-0 w-2.5 h-2.5 bg-blue-600 rounded-full"></span>
+                      <span className="flex-shrink-0 w-2.5 h-2.5 bg-[#EF473B] rounded-full"></span>
                     )}
                   </div>
                 </div>

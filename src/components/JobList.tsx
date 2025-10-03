@@ -112,9 +112,9 @@ export default function JobList() {
                           }
                         );
                       }}
-                      className="ml-auto px-3 py-1 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700"
+                      className="ml-auto px-3 py-1 rounded-lg bg-[#EF473B] text-white text-sm font-medium hover:bg-[#d63d32]"
                     >
-                      Bid
+                      Apply
                     </button>
                   </div>
                 </div>

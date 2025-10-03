@@ -62,7 +62,7 @@ export default function PaymentConfirmation({
       <div className="h-full flex flex-col bg-white rounded-2xl overflow-hidden">
         <div className="flex-1 overflow-y-auto p-6">
           <div className="text-center space-y-6">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 bg-[#2ecc711a] rounded-full flex items-center justify-center mx-auto">
               <span className="text-3xl">✅</span>
             </div>
 
@@ -101,7 +101,7 @@ export default function PaymentConfirmation({
             <div className="space-y-3">
               <button
                 onClick={() => navigate("/messages")}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+                className="w-full bg-[#EF473B] text-white py-3 rounded-lg font-medium hover:bg-[#d63d32] transition"
               >
                 View Messages
               </button>
@@ -182,7 +182,7 @@ export default function PaymentConfirmation({
                 </div>
                 <div className="flex justify-between font-semibold text-lg border-t pt-2 mt-2">
                   <span>Total:</span>
-                  <span className="text-blue-600">${effectivePkg.price}</span>
+                  <span className="text-[#EF473B]">${effectivePkg.price}</span>
                 </div>
               </div>
             </div>
@@ -212,7 +212,7 @@ export default function PaymentConfirmation({
                 </div>
                 <button
                   onClick={handlePayment}
-                  className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition"
+                  className="px-6 py-2 bg-[#2ecc71] text-white rounded-lg font-medium hover:bg-[#27ae60] transition"
                 >
                   Simulate Payment
                 </button>
@@ -221,8 +221,8 @@ export default function PaymentConfirmation({
 
             {paymentStatus === "processing" && (
               <div className="mt-4">
-                <div className="flex items-center justify-center gap-2 text-blue-600">
-                  <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                <div className="flex items-center justify-center gap-2 text-[#EF473B]">
+                  <div className="w-4 h-4 border-2 border-[#EF473B] border-t-transparent rounded-full animate-spin"></div>
                   <span>Processing payment...</span>
                 </div>
               </div>
@@ -230,11 +230,11 @@ export default function PaymentConfirmation({
           </div>
 
           {/* Payment Instructions */}
-          <div className="bg-blue-50 rounded-lg p-4">
-            <h4 className="font-semibold text-blue-900 mb-2">
+          <div className="bg-[#EF473B1a] rounded-lg p-4">
+            <h4 className="font-semibold text-[#EF473B] mb-2">
               Payment Instructions
             </h4>
-            <ul className="text-sm text-blue-800 space-y-1">
+            <ul className="text-sm text-[#2b2b2b] space-y-1">
               <li>• Scan the QR code with your mobile payment app</li>
               <li>• Confirm the amount and artist details</li>
               <li>• Complete the payment</li>
